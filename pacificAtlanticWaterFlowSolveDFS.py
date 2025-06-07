@@ -23,4 +23,12 @@ class Solution:
             DFS(r,0,pacific,heights[r][0])
             DFS(r,COLUMNS-1,atlantic,heights[r][COLUMNS-1]) 
 
+        coordinates=[]
+        for r in range(ROWS):
+            for c in range(COLUMNS):
+                 if (r,c)in pacific and (r,c)in atlantic:
+                    coordinates.append([r,c])
+        return coordinates
+    
+
 
