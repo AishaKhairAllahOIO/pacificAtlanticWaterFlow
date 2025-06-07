@@ -8,9 +8,19 @@ class Solution:
         def DFS(r,c,visit,prevHeight):
             if(r,c)in visit or r<0 or c<0 or r==ROWS or c==COLUMNS or heights[r][c]<prevHeight:
                 return
+            
             visit.add((r,c))
             DFS(r+1,c,visit,heights[r][c])
             DFS(r-1,c,visit,heights[r][c])
             DFS(r,c+1,visit,heights[r][c])
             DFS(r,c-1,visit,heights[r][c]) 
+
+        for c in range(COLUMNS):
+            DFS(0,c,pacific,heights[0][c])
+            DFS(ROWS-1,c,atlantic,heights[ROWS-1][c])
+
+        for r in range(ROWS):
+            DFS(r,0,pacific,heights[r][0])
+            DFS(r,COLUMNS-1,atlantic,heights[r][COLUMNS-1]) 
+
 
