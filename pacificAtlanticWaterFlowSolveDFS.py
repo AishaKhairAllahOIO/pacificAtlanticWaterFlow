@@ -1,4 +1,4 @@
-from pacificAtlanticWaterFlowVisual import draw_matrix
+from pacificAtlanticWaterFlowVisual import visualSolution
 
 class Solution:
     def pacificAtlantic(self,heights):
@@ -41,4 +41,4 @@ if __name__=="__main__":
     sol=Solution()
     answer, pacific, atlantic = sol.pacificAtlantic(heights)
     print("coordinates: ",answer)
-    draw_matrix(heights, pacific, atlantic)
+    visualSolution(heights, pacific, atlantic)
