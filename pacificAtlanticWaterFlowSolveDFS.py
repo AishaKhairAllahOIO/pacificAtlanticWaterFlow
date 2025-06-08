@@ -1,7 +1,7 @@
-from typing import List
+from pacificAtlanticWaterFlowVisual import draw_matrix
 
 class Solution:
-    def pacificAtlantic(self,heights:List[List[int]])->List[List[int]]:
+    def pacificAtlantic(self,heights):
         ROWS,COLUMNS=len(heights),len(heights[0])
         pacific,atlantic=set(),set()
         
@@ -28,7 +28,7 @@ class Solution:
             for c in range(COLUMNS):
                  if (r,c)in pacific and (r,c)in atlantic:
                     coordinates.append([r,c])
-        return coordinates
+        return coordinates,pacific,atlantic
     
 if __name__=="__main__":
     heights=[
@@ -39,8 +39,6 @@ if __name__=="__main__":
         [5, 1, 1, 2, 4]
     ]
     sol=Solution()
-    answer=sol.pacificAtlantic(heights)
+    answer, pacific, atlantic = sol.pacificAtlantic(heights)
     print("coordinates: ",answer)
-    
-
-
+    draw_matrix(heights, pacific, atlantic)
