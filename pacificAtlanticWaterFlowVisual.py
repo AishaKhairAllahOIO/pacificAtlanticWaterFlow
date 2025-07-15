@@ -20,7 +20,7 @@ def visualSolution(island,pacific,atlantic):
 
     screen=pygame.display.set_mode((width,height))
     pygame.display.set_caption("Pacific Atlantic Visualization")
-    font=pygame.font.SysFont('Consolas',FONT_SIZE)
+    font=pygame.font.SysFont('Arial',FONT_SIZE)
     label_font=pygame.font.SysFont('Arial',35,bold=False)
 
     screen.fill((255, 255, 255))
